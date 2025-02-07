@@ -2,14 +2,7 @@
 
 @section('content')
 
-    @include('components.header',[
-        'title' => "Ajouter un utilisateur",
-        'back'   => [
-            'label' => 'Liste des Utilisateurs',
-            'url'   => route('users.index'),
-        ],
-    ])
-
+  
 <div class="content-body">
     <div class="container-fluid">
         <div class="page-titles">
@@ -24,6 +17,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Formulaire d'ajout d'utilisateur</h4>
+                       
                     </div>
                     <div class="card-body">
                         <div class="form-validation">
@@ -35,12 +29,12 @@
                                         <div class="row mb-3">
                                             <div class="col-lg-6">
                                                 <label for="firstname" class="form-label">Prénom <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Entrez le prénom" required>
+                                                <input type="text" class="form-control" id="firstname" name="user[0][firstname]" placeholder="Entrez le prénom" required>
                                                 <div class="invalid-feedback">Veuillez entrer un prénom.</div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <label for="lastname" class="form-label">Nom <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Entrez le nom" required>
+                                                <input type="text" class="form-control" id="lastname" name="user[0][lastname]" placeholder="Entrez le nom" required>
                                                 <div class="invalid-feedback">Veuillez entrer un nom.</div>
                                             </div>
                                         </div>
@@ -50,7 +44,7 @@
                                              
                                             <div class="col-lg-6">
                                                 <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-                                                <input type="email" class="form-control" id="email" name="email" placeholder="Entrez l'email" required>
+                                                <input type="email" class="form-control" id="email" name="user[0][email]" placeholder="Entrez l'email" required>
                                                 <div class="invalid-feedback">Veuillez entrer une adresse email valide.</div>
                                             </div>
                                             <div class="col-lg-6">

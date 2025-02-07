@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Tools;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -10,6 +11,7 @@ class UserController extends Controller
 {
     public function create()
     {
+      
         return view('users.create');
     }
     public function home()
@@ -19,13 +21,18 @@ class UserController extends Controller
 
     public function index()
     {
-        return view('users.index');
+        $users = User::all();
+
+        // Passer les données à la vue
+        return view('users.index', compact('users'));
     }
     public function store(Request $request)
     {
-
+       
+       
         $users = $request->user;
         $create = 0;
+       // dd($request->all());
 
         foreach ($users as $user) {
 
@@ -36,11 +43,11 @@ class UserController extends Controller
             $is_active  = $user['is_active'] ?? null;
             
 
-            if ($firstname && $lastname && $email && $role && $isActive && $site_id) {
+            if ($firstname && $lastname && $email && $role && $is_active ) {
                 $create_user = User::create([
                     'firstname' => $firstname,
                     'lastname'   => $lastname,
-                    'hospital'   => null,
+                    'hopital'   => null,
                     'email' => $email,
                     'password' => null, 
                     'role' => $role,
