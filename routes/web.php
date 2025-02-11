@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\Doctors\MedicationsController;
+use App\Http\Controllers\Doctors\previewController;
+
 use App\Http\Controllers\Doctors\PatientsController;
+use App\Http\Controllers\OrdonnanceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -58,3 +61,15 @@ Route::post('/users', [UserController::class, 'store'])->name('users.store');
 Route::delete('/users/{id}',[UserController::class, 'destroy'])->name('users.destroy');
 Route::get('/users/{id}', [UserController::class, 'edit'])->name('users.edit');
 Route::put('/users/{id}',[UserController::class, 'update'])->name('users.update');
+
+Route::get('/Ordonnance/list', [OrdonnanceController::class, 'index'])->name('Ordonnance.index');
+Route::get('/Ordonnance/create', [OrdonnanceController::class, 'create'])->name('Ordonnance.create');
+
+
+
+
+//dowlload and preview prescription route 
+Route::get('/bull', [previewController::class, 'index1']);
+Route::post('/view', [previewController::class, 'viewPDF'])->name('viewPDF');
+
+Route::post('/download-pdf', [previewController::class, 'downloadPDF'])->name('downloadPDF');
