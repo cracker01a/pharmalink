@@ -41,7 +41,7 @@ class UserController extends Controller
             $email  = $user['email'] ?? null;
             $role  = $user['role'] ?? null;
             $is_active  = $user['is_active'] ?? null;
-            
+            // dd($role);
 
             if ($firstname && $lastname && $email && $role && $is_active ) {
                 $create_user = User::create([
@@ -66,5 +66,26 @@ class UserController extends Controller
             return redirect()->back()->with(['error' => "Enregistrement echoué. Veuillez verifier vos informations saisies."]);
         }
     }
+    public function destroy(string $id)
+    {
+        // Trouver l'utilisateur par son ID
+    $user = User::findOrFail($id);
+
+    // Supprimer l'utilisateur
+    $user->delete();
+
+    return redirect()->route('users.index')->with('success', 'Utilisateur supprimé avec succès.');
+}
+
+
+public function edit(string $id) 
+{
+    // Recuperer l'utilisateur par son id 
+    $user = User::findOrFail($id);
+
+    return view('users.edit', compact('user'));
+}
+
+
 
 }

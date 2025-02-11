@@ -52,7 +52,7 @@
                                                 <select class="form-select" name="user[0][role]">
                                                     <option value="" disabled selected>-- Sélectionnez un rôle --</option>
                                                     <option value="admin" {{ old('user.0.role') == 'admin' ? 'selected' : '' }}>Admin</option>
-                                                    <option value="super_admin" {{ old('user.0.role') == 'doctor' ? 'selected' : '' }}>Doctor</option>
+                                            <option value="doctor" {{ old('user.0.role') == 'doctor' ? 'selected' : '' }}>Doctor</option>
                                                 </select>
                                             </div>
                                            
