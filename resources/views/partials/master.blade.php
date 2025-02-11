@@ -23,6 +23,8 @@
 	<!-- Title -->
 	<title>@yield('title')</title>
     <!-- Favicon icon -->
+      <!-- Form step -->
+    <link href="vendor/jquery-smartwizard/dist/css/smart_wizard.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <link href="vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="vendor/chartist/css/chartist.min.css">
@@ -127,10 +129,24 @@
 	<script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 	<!-- Chart piety plugin files -->
        <script src="vendor/peity/jquery.peity.min.js"></script>
-	
+
+        <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+
+	<!-- Form validate init -->
+    <script src="js/plugins-init/jquery.validate-init.js"></script>
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
+	<!-- Form Steps -->
+	<script src="vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js"></script>
 	
+	<script>
+		$(document).ready(function(){
+			// SmartWizard initialize
+			$('#smartwizard').smartWizard(); 
+		});
+	</script>
 	<!-- Dashboard 1 -->
 	<script src="js/dashboard/dashboard-1.js"></script>
 	<script>
