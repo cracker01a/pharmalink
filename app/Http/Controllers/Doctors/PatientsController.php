@@ -10,12 +10,12 @@ class PatientsController
     public function index()
     {
         $patients = Patient::all();
-        return view('patients.index');
+        return view('Doctor/patients.index');
     }
 
     public function create()
     {
-        return view('patients.create');
+        return view('Doctor/patients.create');
     }
 
     public function store(Request $request)
@@ -36,12 +36,12 @@ class PatientsController
 
     public function show(Patient $patient)
     {
-        return view('patients.show', compact('patient'));
+        return view('Doctor/patients.show', compact('patient'));
     }
 
     public function edit(Patient $patient)
     {
-        return view('patients.edit', compact('patient'));
+        return view('Doctor/patients.edit', compact('patient'));
     }
 
     public function update(Request $request, Patient $patient)

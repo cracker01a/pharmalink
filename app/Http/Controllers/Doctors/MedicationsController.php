@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Doctors;
 
 use App\Models\Medication;
-use http\Env\Request;
+use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 
 class MedicationsController
