@@ -87,7 +87,7 @@
 
         .footer {
             border-top: 1px solid #000;
-            padding-top: 100px;
+            padding-top: 450px;
             font-size: 10px;
             display: flex;
             justify-content: space-between;
@@ -154,6 +154,23 @@
             <p>1 comprimé le matin, 1 comprimé le midi, 1 comprimé le soir pendant 5 jours</p>
             <p><strong>Nombre de produit :</strong> 1</p>
         </div>
+        <table border="1" cellpadding="5">
+        <tr>
+            <th>Médicament</th>
+            <th>Dosage</th>
+            <th>Fréquence</th>
+        </tr>
+        @foreach ($medicaments as $medicament)
+            <tr>
+                <td>{{ $medicament['nom'] }}</td>
+                <td>{{ $medicament['dose'] }}</td>
+                <td>{{ $medicament['frequence'] }}</td>
+            </tr>
+        @endforeach
+    </table>
+
+    <p>Scannez le QR Code ci-dessous pour voir les détails :</p>
+    <img src="data:image/png;base64,{{ $qrCode }}" alt="QR Code">
 
         <!-- Footer -->
         <div class="footer">
