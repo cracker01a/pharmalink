@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Doctors\MedicationsController;
-use App\Http\Controllers\Doctors\previewController;
+use App\Http\Controllers\previewController;
 
 use App\Http\Controllers\Doctors\PatientsController;
 use App\Http\Controllers\OrdonnanceController;
@@ -69,6 +69,7 @@ Route::get('/Ordonnance/create', [OrdonnanceController::class, 'create'])->name(
 
 
 //dowlload and preview prescription route 
+Route::get('/preview', [previewController::class, 'index']);
 Route::get('/bull', [previewController::class, 'index1']);
 Route::post('/view', [previewController::class, 'viewPDF'])->name('viewPDF');
 
