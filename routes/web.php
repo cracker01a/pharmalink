@@ -2,10 +2,11 @@
 
 use App\Http\Controllers\Doctors\MedicationsController;
 use App\Http\Controllers\Doctors\OrdonnanceController;
+
 use App\Http\Controllers\Doctors\PatientsController;
-use App\Http\Controllers\Doctors\previewController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\previewController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
