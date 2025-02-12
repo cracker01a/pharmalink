@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('patient_id')->constrained();
-            $table->foreignId('doctor_id')->constrained();
-            $table->string('prescription_code');
+            $table->unsignedBigInteger('doctor_id');
+            $table->foreign('doctor_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('prescription_code')->nullable();
 
         });
     }

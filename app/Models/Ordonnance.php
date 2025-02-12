@@ -9,20 +9,23 @@ class Ordonnance extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['doctor_id', 'patient_id', 'prescription_id'];
+    protected $guarded = [];
 
-    public function doctor()
+    public function prescriptionMedication()
     {
-        return $this->belongsTo(User::class);
-    }
-
-    public function patient()
-    {
-        return $this->belongsTo(Patient::class);
+        return $this->belongsTo(PrescriptionMedication::class);
     }
 
     public function prescription()
     {
-        return $this->belongsTo(Prescription::class);
+        return $this->hasOneThrough(Prescription::class, PrescriptionMedication::class, 'id', 'id', 'prescription_medication_id', 'prescriptions_id');
+    }
+
+    /**
+     * Relation avec le docteur (via Prescription).
+     */
+    public function doctor()
+    {
+        return $this->hasOneThrough(User::class, Prescription::class, 'id', 'id', 'prescription_medication_id', 'doctor_id');
     }
 }

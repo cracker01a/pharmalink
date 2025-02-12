@@ -64,6 +64,7 @@ Route::put('/users/{id}',[UserController::class, 'update'])->name('users.update'
 Route::get('/Ordonnance/list', [OrdonnanceController::class, 'index'])->name('Ordonnance.index');
 Route::get('/Ordonnance/create', [OrdonnanceController::class, 'create'])->name('Ordonnance.create');
 Route::post('/Ordonnance/create', [OrdonnanceController::class, 'store'])->name('Ordonnance.store');
+Route::get('/Ordonnance/test', [OrdonnanceController::class, 'test'])->name('Ordonnance.test');
 
 
 
