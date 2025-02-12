@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('ordonnances', function (Blueprint $table) {
             $table->id();
             $table->foreignId('doctor_id')->constrained();
-            $table->foreignId('patient_id')->constrained();
-            $table->foreignId('prescription_id')->constrained();
             $table->timestamps();
         });
     }

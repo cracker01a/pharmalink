@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('prescriptions_id')->constrained();
             $table->foreignId('medications_id')->constrained();
+            $table->string('posology')->nullable();
             $table->timestamps();
         });
     }

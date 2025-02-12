@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Doctors;
 use App\Models\Medication;
 use App\Models\Ordonnance;
 use App\Models\Patient;
+use App\Models\Prescription;
+use App\Models\PrescriptionMedication;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class OrdonnanceController
@@ -48,12 +51,10 @@ class OrdonnanceController
             'firstName' => 'required|string|max:255',
             'lastName' => 'required|string|max:255',
             'birthdate' => 'required|date',
-            'email' => 'required|email|unique:patients,email',
+            'email' => 'required|email',
             'phoneNumber' => 'nullable|string|max:20',
             'place' => 'required|string|max:255',
         ])->validate();
-
-
 
 
         $patient = Patient::firstOrCreate([
@@ -69,6 +70,12 @@ class OrdonnanceController
 
         // Enregistrement des médicaments s'il y en a
         if (!empty($medicationsData)) {
+            $prescription = Prescription::create(
+                [
+                    'doctor_id' => Auth::user()->id ?? 1,
+                    'patient_id' => $patient->id,
+                ]
+            );
             // Parcours des paires médication et posologie
             for ($i = 0; $i < count($medicationsData); $i++) {
                 $medication = $medicationsData[$i]['medication'] ?? null;
@@ -76,16 +83,21 @@ class OrdonnanceController
 
                 // Vérifier si le médicament est non vide et si une posologie existe
                 if (!empty($medication)) {
-                    $medication = Medication::create([
+                    $medication = Medication::firstOrCreate([
                         'name' => $medication,
-                        'posology' => $posology, // Posologie est facultative
                     ]);
+
+                    $prescriptionMedication = PrescriptionMedication::create(
+                        [
+                            'prescriptions_id' => $prescription->id,
+                            'medications_id' => $medication->id,
+                            'posology' => $posology, // Posologie est facultative
+                        ]
+                    );
 
                 }
             }
         }
-
-
 
 
         return response()->json(['message' => 'Patient et ordonnances enregistrés avec succès !'], 201);

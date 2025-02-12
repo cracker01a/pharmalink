@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('medications', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('posology')->nullable();
             $table->timestamps();
         });
     }
