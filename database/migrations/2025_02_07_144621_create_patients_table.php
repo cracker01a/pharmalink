@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->integer('phone_number');
             $table->date('date_of_birth');
+            $table->string('address')->nullable();
             $table->boolean('is_active')->default(false);
             $table->timestamps();
         });

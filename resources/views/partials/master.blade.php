@@ -57,19 +57,19 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-       
+
         <!--**********************************
             Nav header end
         ***********************************-->
-		
+
 		<!--**********************************
             Chat box start
         ***********************************-->
-		
+
 		<!--**********************************
             Chat box End
         ***********************************-->
-		
+
 		<!--**********************************
             Header start
         ***********************************-->
@@ -85,7 +85,7 @@
         <!--**********************************
             Sidebar end
         ***********************************-->
-		
+
 		<!--**********************************
             Content body start
         ***********************************-->
@@ -140,11 +140,11 @@
 	<script src="vendor/apexchart/apexchart.js"></script>
 	<!-- Form Steps -->
 	<script src="vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js"></script>
-	
+
 	<script>
 		$(document).ready(function(){
 			// SmartWizard initialize
-			$('#smartwizard').smartWizard(); 
+			$('#smartwizard').smartWizard();
 		});
 	</script>
 	<!-- Dashboard 1 -->
@@ -156,6 +156,8 @@
 			});
 		});
 	</script>
+
+    @yield('scripts')
 </body>
 
 <!-- Mirrored from welly.dexignzone.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 13:47:44 GMT -->

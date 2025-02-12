@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Patient;
+use App\Observers\OrdonnanceObserver;
 use Illuminate\Auth\Events\Registered;
 use App\Observers\UserObserver;
 
@@ -29,6 +31,7 @@ class EventServiceProvider extends ServiceProvider
     public function boot(): void
     {
         User::observe(UserObserver::class);
+
     }
 
     /**

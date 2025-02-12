@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('medications', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('dosage');
+            $table->string('name');
+            $table->string('posology')->nullable();
             $table->timestamps();
         });
     }
