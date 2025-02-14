@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Observers;
+use App\Mail\WelcomeEmail;
+use Illuminate\Support\Facades\Mail;
 
 use App\Models\User;
 
@@ -11,7 +13,8 @@ class UserObserver
      */
     public function created(User $user): void
     {
-        \Mail::to($user->email)->send(new WelcomeEmail($user));
+        Mail::to($user->email)->send(new WelcomeEmail($user));
+    
     }
 
     /**

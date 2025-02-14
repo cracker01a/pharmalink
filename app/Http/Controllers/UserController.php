@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth'); // Oblige l'authentification
+    }
+
+   
+
     public function create()
     {
       
@@ -85,6 +93,7 @@ public function edit(string $id)
 
     return view('users.edit', compact('user'));
 }
+
 
 
 

@@ -5,8 +5,15 @@ use App\Http\Controllers\previewController;
 
 use App\Http\Controllers\Doctors\PatientsController;
 use App\Http\Controllers\OrdonnanceController;
+use App\Http\Controllers\ProfileDoctorController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use Illuminate\Http\Request;
+use App\Models\User;
+use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +26,15 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.dash');
+
+    // Route::get('/profile', [ProfileController::class, 'index'])->name('profile')
+
+// Route::get('/dash', [UserController::class, 'home'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [UserController::class, 'home'])->name('home');
+    // Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 });
 
-Route::get('/', [UserController::class, 'home'])->name('home');
 
 
 Route::prefix('medication')->name('medications.')->group(function () {
@@ -74,3 +85,24 @@ Route::get('/bull', [previewController::class, 'index1']);
 Route::post('/view', [previewController::class, 'viewPDF'])->name('viewPDF');
 
 Route::post('/download-pdf', [previewController::class, 'downloadPDF'])->name('downloadPDF');
+
+
+
+
+// Vérification de l'email
+Route::post('/check-email', [AuthController::class, 'checkEmail']);
+
+// Connexion
+Route::get('/login', [AuthController::class, 'log'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+//deconnexion
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+
+Route::get('/profile-Doctor', [ProfileDoctorController::class, 'index'])->name('login');
+
+
+
+
+

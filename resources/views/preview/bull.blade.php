@@ -170,7 +170,7 @@
     </table>
 
     <p>Scannez le QR Code ci-dessous pour voir les détails :</p>
-    <img src="data:image/png;base64,{{ $qrCode }}" alt="QR Code">
+
 
         <!-- Footer -->
         <div class="footer">
