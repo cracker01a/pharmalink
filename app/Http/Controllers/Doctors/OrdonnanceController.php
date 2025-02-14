@@ -18,7 +18,10 @@ class OrdonnanceController
      */
     public function index()
     {
-        return response()->json(Ordonnance::with(['doctor', 'patient', 'prescription'])->get());
+        $ordonnances = Ordonnance::with(['prescription', 'prescription.doctor', 'prescription.patient', 'prescriptionMedication'])->get();
+        $patients = Patient::with(['prescription.ordonnance'])->get();
+        return view('Doctor.Ordonnance.index', compact('ordonnances', 'patients'));
+
     }
 
     /**
@@ -52,6 +55,8 @@ class OrdonnanceController
             'lastName' => 'required|string|max:255',
             'birthdate' => 'required|date',
             'email' => 'required|email',
+            'gender' => 'required|string|max:255',
+            'job' => 'required|string|max:255',
             'phoneNumber' => 'nullable|string|max:20',
             'place' => 'required|string|max:255',
         ])->validate();
@@ -62,9 +67,12 @@ class OrdonnanceController
             'phone_number' => $patientData['phoneNumber'],
             'firstname' => $patientData['firstName'],
             'lastname' => $patientData['lastName'],
+            'gender' => $patientData['gender'],
         ], [
             'date_of_birth' => $patientData['birthdate'],
             'address' => $patientData['place'],
+            'job' => $patientData['job'],
+            'gender' => $patientData['gender'],
         ]);
 
 
@@ -79,7 +87,8 @@ class OrdonnanceController
             // Parcours des paires médication et posologie
             for ($i = 0; $i < count($medicationsData); $i++) {
                 $medication = $medicationsData[$i]['medication'] ?? null;
-                $posology = $medicationsData[$i]['posologie'] ?? null;
+                $posology = $medicationsData[$i+1]['posologie'] ?? null;
+
 
                 // Vérifier si le médicament est non vide et si une posologie existe
                 if (!empty($medication)) {
@@ -97,6 +106,11 @@ class OrdonnanceController
 
                 }
             }
+
+            $ordonnance = Ordonnance::create([
+                'prescription_id' => $prescription->id,
+                'code' => 'gdgsdf',
+            ]);
         }
 
 

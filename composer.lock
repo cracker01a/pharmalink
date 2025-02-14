@@ -4,40 +4,36 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d11bdc7e25879a7351d3029f21623408",
+    "content-hash": "00c8e27617267a5f370e30e3a740611f",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
-            "version": "2.0.8",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Bacon/BaconQrCode.git",
-                "reference": "8674e51bb65af933a5ffaf1c308a660387c35c22"
+                "reference": "448ee9929aece0e86f0e2b926e636f9b53d03ce1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/8674e51bb65af933a5ffaf1c308a660387c35c22",
-                "reference": "8674e51bb65af933a5ffaf1c308a660387c35c22",
+                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/448ee9929aece0e86f0e2b926e636f9b53d03ce1",
+                "reference": "448ee9929aece0e86f0e2b926e636f9b53d03ce1",
                 "shasum": ""
             },
             "require": {
-                "dasprid/enum": "^1.0.3",
                 "ext-iconv": "*",
-                "php": "^7.1 || ^8.0"
+                "php": ">=5.3.3"
             },
             "require-dev": {
-                "phly/keep-a-changelog": "^2.1",
-                "phpunit/phpunit": "^7 | ^8 | ^9",
-                "spatie/phpunit-snapshot-assertions": "^4.2.9",
-                "squizlabs/php_codesniffer": "^3.4"
+                "phpunit/phpunit": "^4.8"
             },
             "suggest": {
-                "ext-imagick": "to generate QR code images"
+                "ext-gd": "to generate QR code images"
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "BaconQrCode\\": "src/"
+                "psr-0": {
+                    "BaconQrCode": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -48,7 +44,7 @@
                 {
                     "name": "Ben Scholzen 'DASPRiD'",
                     "email": "mail@dasprids.de",
-                    "homepage": "https://dasprids.de/",
+                    "homepage": "http://www.dasprids.de",
                     "role": "Developer"
                 }
             ],
@@ -56,9 +52,9 @@
             "homepage": "https://github.com/Bacon/BaconQrCode",
             "support": {
                 "issues": "https://github.com/Bacon/BaconQrCode/issues",
-                "source": "https://github.com/Bacon/BaconQrCode/tree/2.0.8"
+                "source": "https://github.com/Bacon/BaconQrCode/tree/master"
             },
-            "time": "2022-12-07T17:46:57+00:00"
+            "time": "2016-11-26T13:57:10+00:00"
         },
         {
             "name": "barryvdh/laravel-dompdf",
@@ -265,56 +261,6 @@
                 }
             ],
             "time": "2023-12-11T17:09:12+00:00"
-        },
-        {
-            "name": "dasprid/enum",
-            "version": "1.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DASPRiD/Enum.git",
-                "reference": "8dfd07c6d2cf31c8da90c53b83c026c7696dda90"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DASPRiD/Enum/zipball/8dfd07c6d2cf31c8da90c53b83c026c7696dda90",
-                "reference": "8dfd07c6d2cf31c8da90c53b83c026c7696dda90",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1 <9.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7 || ^8 || ^9 || ^10 || ^11",
-                "squizlabs/php_codesniffer": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "DASPRiD\\Enum\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ben Scholzen 'DASPRiD'",
-                    "email": "mail@dasprids.de",
-                    "homepage": "https://dasprids.de/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "PHP 7.1 enum implementation",
-            "keywords": [
-                "enum",
-                "map"
-            ],
-            "support": {
-                "issues": "https://github.com/DASPRiD/Enum/issues",
-                "source": "https://github.com/DASPRiD/Enum/tree/1.0.6"
-            },
-            "time": "2024-08-09T14:30:48+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2397,16 +2343,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.72.6",
+            "version": "2.73.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "1e9d50601e7035a4c61441a208cb5bed73e108c5"
+                "reference": "9228ce90e1035ff2f0db84b40ec2e023ed802075"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/1e9d50601e7035a4c61441a208cb5bed73e108c5",
-                "reference": "1e9d50601e7035a4c61441a208cb5bed73e108c5",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/9228ce90e1035ff2f0db84b40ec2e023ed802075",
+                "reference": "9228ce90e1035ff2f0db84b40ec2e023ed802075",
                 "shasum": ""
             },
             "require": {
@@ -2500,7 +2446,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-27T09:28:11+00:00"
+            "time": "2025-01-08T20:10:23+00:00"
         },
         {
             "name": "nette/schema",
@@ -3651,44 +3597,31 @@
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
-            "version": "4.2.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleSoftwareIO/simple-qrcode.git",
-                "reference": "916db7948ca6772d54bb617259c768c9cdc8d537"
+                "reference": "0d8fbf73f7adc166ec5aabbf898b7327f6c69600"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleSoftwareIO/simple-qrcode/zipball/916db7948ca6772d54bb617259c768c9cdc8d537",
-                "reference": "916db7948ca6772d54bb617259c768c9cdc8d537",
+                "url": "https://api.github.com/repos/SimpleSoftwareIO/simple-qrcode/zipball/0d8fbf73f7adc166ec5aabbf898b7327f6c69600",
+                "reference": "0d8fbf73f7adc166ec5aabbf898b7327f6c69600",
                 "shasum": ""
             },
             "require": {
-                "bacon/bacon-qr-code": "^2.0",
+                "bacon/bacon-qr-code": "1.0.*",
                 "ext-gd": "*",
-                "php": ">=7.2|^8.0"
+                "illuminate/support": ">=4.2.0",
+                "php": ">=5.4.0"
             },
             "require-dev": {
-                "mockery/mockery": "~1",
-                "phpunit/phpunit": "~9"
-            },
-            "suggest": {
-                "ext-imagick": "Allows the generation of PNG QrCodes.",
-                "illuminate/support": "Allows for use within Laravel."
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "~5"
             },
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "aliases": {
-                        "QrCode": "SimpleSoftwareIO\\QrCode\\Facades\\QrCode"
-                    },
-                    "providers": [
-                        "SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider"
-                    ]
-                }
-            },
             "autoload": {
-                "psr-4": {
+                "psr-0": {
                     "SimpleSoftwareIO\\QrCode\\": "src"
                 }
             },
@@ -3703,7 +3636,7 @@
                 }
             ],
             "description": "Simple QrCode is a QR code generator made for Laravel.",
-            "homepage": "https://www.simplesoftware.io/#/docs/simple-qrcode",
+            "homepage": "http://www.simplesoftware.io",
             "keywords": [
                 "Simple",
                 "generator",
@@ -3713,9 +3646,9 @@
             ],
             "support": {
                 "issues": "https://github.com/SimpleSoftwareIO/simple-qrcode/issues",
-                "source": "https://github.com/SimpleSoftwareIO/simple-qrcode/tree/4.2.0"
+                "source": "https://github.com/SimpleSoftwareIO/simple-qrcode/tree/1.5.1"
             },
-            "time": "2021-02-08T20:43:55+00:00"
+            "time": "2016-12-06T01:39:52+00:00"
         },
         {
             "name": "symfony/console",
@@ -6548,16 +6481,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.12.1",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "123267b2c49fbf30d78a7b2d333f6be754b94845"
+                "reference": "024473a478be9df5fdaca2c793f2232fe788e414"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/123267b2c49fbf30d78a7b2d333f6be754b94845",
-                "reference": "123267b2c49fbf30d78a7b2d333f6be754b94845",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/024473a478be9df5fdaca2c793f2232fe788e414",
+                "reference": "024473a478be9df5fdaca2c793f2232fe788e414",
                 "shasum": ""
             },
             "require": {
@@ -6596,7 +6529,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.12.1"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.13.0"
             },
             "funding": [
                 {
@@ -6604,7 +6537,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-11-08T17:47:46+00:00"
+            "time": "2025-02-12T12:17:51+00:00"
         },
         {
             "name": "nunomaduro/collision",
@@ -8663,13 +8596,13 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.1",
         "ext-http": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }

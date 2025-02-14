@@ -69,6 +69,7 @@ Route::get('/Ordonnance/test', [OrdonnanceController::class, 'test'])->name('Ord
 
 
 //dowlload and preview prescription route
+Route::get('/preview', [PreviewController::class, 'index'])->name('preview.index');
 Route::get('/bull', [previewController::class, 'index1']);
 Route::post('/view', [previewController::class, 'viewPDF'])->name('viewPDF');
 

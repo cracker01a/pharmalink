@@ -46,6 +46,23 @@
                                         </div>
                                         <div class="col-lg-6 mb-2">
                                             <div class="form-group">
+                                                <label class="form-label">Sexe<span
+                                                        class="required">*</span></label>
+                                                <select name="gender" class="form-select">
+                                                    <option value="Masculin">Masculin</option>
+                                                    <option value="Feminin">Feminin</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-2">
+                                            <div class="form-group">
+                                                <label class="form-label">Job<span class="required">*</span></label>
+                                                <input type="text" name="job" class="form-control"
+                                                       placeholder="Chômeur" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-2">
+                                            <div class="form-group">
                                                 <label class="form-label">Date de naissance<span
                                                         class="required">*</span></label>
                                                 <input type="date" class="form-control" name="birthdate" id="dob"
@@ -199,6 +216,8 @@
                     lastName: $("input[name='lastName']").val(),
                     birthdate: $("input[name='birthdate']").val(),
                     email: $("input[type='email']").val(),
+                    gender: $("select[name='gender']").val(),
+                    job: $("input[name='job']").val(),
                     phoneNumber: $("input[name='phoneNumber']").val(),
                     place: $("input[name='place']").val()
                 };
@@ -224,7 +243,7 @@
                         console.log(response);
                     },
                     error: function (xhr) {
-                        alert("Erreur lors de la soumission : " + xhr.status);
+                        alert("Erreur lors de la soumission : " + xhr.responseText);
                         console.error(xhr.responseText);
                     }
                 });

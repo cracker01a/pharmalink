@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use BaconQrCode\Encoder\QrCode;
 use Illuminate\Http\Request;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 
@@ -14,7 +14,7 @@ class previewController extends Controller
     {
         return view('preview.preview');
     }
-    
+
     public function index1()
     {
         return view('preview.bull');
@@ -37,14 +37,14 @@ class previewController extends Controller
 
         // Charger la vue 'bull.blade.php' et récupérer son contenu HTML
         $html = view('preview.bull')->render();
-    
+
         // Instancier l'objet PDF avec le contenu HTML
         $pdf = PDF::loadHTML($html);
-    
+
         // Définir le papier en mode portrait (option par défaut)
         $pdf->setPaper('A4', 'portrait', compact('medicaments', 'qrCode'));
-    
-    
+
+
         // Retourner le PDF en flux
         return $pdf->stream('ordonance-portrait.pdf');
     }
@@ -69,7 +69,7 @@ class previewController extends Controller
 
             // Définir le papier en mode portrait (option par défaut)
             $pdf->setPaper('A4', 'portrait', compact('medicaments', 'qrCode'));
-        
+
 
         // Retourner le PDF en tant que fichier téléchargeable
         return $pdf->download('bull.pdf');

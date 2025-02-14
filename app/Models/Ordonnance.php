@@ -18,7 +18,7 @@ class Ordonnance extends Model
 
     public function prescription()
     {
-        return $this->hasOneThrough(Prescription::class, PrescriptionMedication::class, 'id', 'id', 'prescription_medication_id', 'prescriptions_id');
+        return $this->belongsTo(Prescription::class);
     }
 
     /**
