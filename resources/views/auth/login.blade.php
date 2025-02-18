@@ -59,24 +59,24 @@
                 <div class="col-md-6">
                     <div class="authincation-content">
                         <div class="auth-form">
-                            <h4 class="text-center mb-4 text-white">Sign in to your account</h4>
+                            <h4 class="text-center mb-4 text-white">Connexion</h4>
                             <form action="{{ route('login') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label class="mb-1 text-white"><strong>Email</strong></label>
-                                    <input type="email" id="email" name="email" class="form-control" required>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Entrez votre email" required>
                                     <span id="email-error" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label class="mb-1 text-white"><strong>Password</strong></label>
-                                    <input type="password" name="password" class="form-control" autocomplete="new-password" required>
+                                    <label class="mb-1 text-white"><strong>Mot de passe </strong></label>
+                                    <input type="password" name="password" class="form-control" autocomplete="new-password" placeholder="Entrez votre mot de passe" required>
                                 </div>
                                 <div class="form-group" id="password-confirm-group" style="display: none;">
                                     <label><strong>Confirmer le mot de passe</strong></label>
                                     <input type="password" name="confirm_password" class="form-control">
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn bg-white text-primary btn-block">Sign Me In</button>
+                                    <button type="submit" class="btn bg-white text-primary btn-block">Se connecter</button>
                                 </div>
                             </form>
                         </div>

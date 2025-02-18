@@ -5,7 +5,7 @@ use App\Http\Controllers\previewController;
 
 use App\Http\Controllers\Doctors\PatientsController;
 use App\Http\Controllers\OrdonnanceController;
-use App\Http\Controllers\ProfileDoctorController;
+use App\Http\Controllers\Doctors\ProfileDoctorController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -100,7 +100,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 
-Route::get('/profile-Doctor', [ProfileDoctorController::class, 'index'])->name('login');
+Route::get('/profile-Doctor', [ProfileDoctorController::class, 'index'])->name('profile');
+Route::post('/doctor/update', [ProfileDoctorController::class, 'update'])->name('doctor.update');
+
 
 
 

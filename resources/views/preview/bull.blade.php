@@ -44,7 +44,7 @@
         }
 
         .box {
-            border: 3px solid #000;
+            border: 1px solid #000;
             padding: 5px;
             margin-bottom: 20px;
             display: flex;
@@ -154,22 +154,9 @@
             <p>1 comprimé le matin, 1 comprimé le midi, 1 comprimé le soir pendant 5 jours</p>
             <p><strong>Nombre de produit :</strong> 1</p>
         </div>
-        <table border="1" cellpadding="5">
-        <tr>
-            <th>Médicament</th>
-            <th>Dosage</th>
-            <th>Fréquence</th>
-        </tr>
-        @foreach ($medicaments as $medicament)
-            <tr>
-                <td>{{ $medicament['nom'] }}</td>
-                <td>{{ $medicament['dose'] }}</td>
-                <td>{{ $medicament['frequence'] }}</td>
-            </tr>
-        @endforeach
-    </table>
+       
 
-    <p>Scannez le QR Code ci-dessous pour voir les détails :</p>
+   
 
 
         <!-- Footer -->

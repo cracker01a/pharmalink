@@ -33,12 +33,7 @@ class AuthController extends Controller
             return back()->withErrors(['email' => 'Email non trouvé.']);
         }
 
-         // Vérifier si le compte est bloqué temporairement après trop d'essais
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Réinitialiser le compteur de tentatives après une connexion réussie
-            $request->session()->forget('login_attempts');
-            return redirect()->route('home');
-        }
+       
 
         // Incrémenter les tentatives de connexion
         $attempts = $request->session()->get('login_attempts', 0) + 1;

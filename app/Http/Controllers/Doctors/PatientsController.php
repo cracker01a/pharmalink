@@ -10,7 +10,7 @@ class PatientsController
     public function index()
     {
         $patients = Patient::all();
-        return view('patients.index');
+        return view('Doctor.patient.index');
     }
 
     public function create()
