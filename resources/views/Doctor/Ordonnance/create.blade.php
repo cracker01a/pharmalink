@@ -8,30 +8,27 @@
     <div class="content-body">
         <div class="container-fluid">
             <div class="page-titles">
-                <h4>Wizard</h4>
+                <h4>Ordonnance</h4>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Wizard</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)"></a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)"></a></li>
                 </ol>
             </div>
             <!-- row -->
             <div class="row">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Form step</h4>
+                        <h4 class="card-title">Faire Une Nouvelle Ordonnance</h4>
                     </div>
                     <div class="card-body">
                         <div id="form-wizard" class="form-wizard order-create">
-                            <ul class="nav nav-wizard">
-                                <li><a class="nav-link active" href="#wizard_Service">Étape 1</a></li>
-                                <li><a class="nav-link" href="#wizard_Time">Étape 2</a></li>
-                            </ul>
                             <div class="tab-content">
                                 <div id="wizard_Service" class="tab-pane active" role="tabpanel">
+                                    <h3>Informations Du Patients</h3>
                                     <div class="row">
                                         <div class="col-lg-6 mb-2">
                                             <div class="form-group">
-                                                <label class="form-label">Prénom du patient<span
+                                                <label class="form-label">Prénom(s) du patient<span
                                                         class="required">*</span></label>
                                                 <input type="text" name="firstName" class="form-control"
                                                        placeholder="Parsley" required>
@@ -76,7 +73,7 @@
                                                        placeholder="Montana" required disabled>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12 mb-2">
+                                        <div class="col-lg-6 mb-2">
                                             <div class="form-group">
                                                 <label class="form-label">Email Address<span
                                                         class="required">*</span></label>
@@ -84,7 +81,7 @@
                                                        placeholder="example@example.com" name="email" required>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12 mb-2">
+                                        <div class="col-lg-6 mb-2">
                                             <div class="form-group">
                                                 <label class="form-label">Phone Number<span
                                                         class="required">*</span></label>
@@ -92,17 +89,25 @@
                                                        placeholder="(+1)408-657-9007" required>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12 mb-3">
+                                        <div class="col-lg-6 mb-3">
                                             <div class="form-group">
-                                                <label class="form-label">Where are you from<span
+                                                <label class="form-label">Addresse<span
                                                         class="required">*</span></label>
                                                 <input type="text" name="place" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Diagnostique<span
+                                                        class="required">*</span></label>
+                                                <input type="text" name="disease" class="form-control" required>
                                             </div>
                                         </div>
                                     </div>
                                     <button type="button" class="btn btn-primary next-step">Suivant</button>
                                 </div>
                                 <div id="wizard_Time" class="tab-pane" role="tabpanel">
+                                    <h3>Prescription</h3>
                                     <div class="row flex-row" id="dynamic_form">
                                         <div class="col">
                                             <div class="form-group">
@@ -123,6 +128,10 @@
                                     <button type="submit" id="submit-btn" class="btn btn-success">Soumettre</button>
                                 </div>
                             </div>
+                            <ul class="nav nav-wizard">
+                                <li><a class="nav-link active" href="#wizard_Service"></a></li>
+                                <li><a class="nav-link" href="#wizard_Time"></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -218,6 +227,7 @@
                     email: $("input[type='email']").val(),
                     gender: $("select[name='gender']").val(),
                     job: $("input[name='job']").val(),
+                    disease: $("input[name='disease']").val(),
                     phoneNumber: $("input[name='phoneNumber']").val(),
                     place: $("input[name='place']").val()
                 };
@@ -241,6 +251,7 @@
                     success: function (response) {
                         alert("Formulaire soumis avec succès : " + response.message);
                         console.log(response);
+
                     },
                     error: function (xhr) {
                         alert("Erreur lors de la soumission : " + xhr.responseText);

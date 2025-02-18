@@ -21,45 +21,33 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Liste Des Patients</h4>
+                            <h4 class="card-title">Liste Des Ordonnances</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="example3" class="display min-w850">
                                     <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Nom</th>
-                                        <th>Métier</th>
-                                        <th>Genre</th>
-                                        <th>Tel</th>
-                                        <th>Email</th>
-                                        <th>Dernière Ordonnance</th>
+                                    <tr class="align-items-center">
+                                        <th>Code</th>
+                                        <th>Patient</th>
+                                        <th>Diagnostic</th>
+                                        <th>Date</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @if($patients && $patients->isNotEmpty())
-                                        @foreach($patients as $patient)
+                                    @if($ordonnances && $ordonnances->isNotEmpty())
+                                        @foreach($ordonnances as $ordonnance)
                                             <tr>
-                                                <td><img class="rounded-circle" width="35"
-                                                         src="images/profile/small/pic1.jpg" alt=""></td>
-                                                <td>{{ $patient->firstname . ' ' . $patient->lastname }}</td>
-                                                <td>{{ $patient->job }}</td>
-                                                <td>{{ $patient->gender }}</td>
-                                                <td>
-                                                    <a href="javascript:void(0);"><strong>{{ $patient->phone_number }}</strong></a>
-                                                </td>
-                                                <td>
-                                                    <a href="javascript:void(0);"><strong>{{ $patient->email }}</strong></a>
-                                                </td>
-                                                <td>{{ $patient->prescription->last()->ordonnance->created_at->formatLocalized('%A %d %B %Y à %H:%M') }}</td>
+                                                <td>{{ $ordonnance->code }}</td>
+                                                <td>{{ $ordonnance->prescription->patient->firstname . ' ' . $ordonnance->prescription->patient->lastname }}</td>
+                                                <td>{{ $ordonnance->prescription->disease }}</td>
+                                                <td>{{ $ordonnance->created_at->formatLocalized('%A %d %B %Y à %H:%M') }}</td>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i
-                                                                class="fa fa-pencil"></i></a>
-                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i
-                                                                class="fa fa-trash"></i></a>
+                                                        <a class="btn btn-primary shadow btn-xs sharp showPatientOrdonnancesButton"
+                                                           data-patient-id="{{$ordonnance->id}}"><i
+                                                                class="fa fa-eye"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -77,10 +65,74 @@
                     </div>
                 </div>
 
+                <div class="modal fade" id="patientModal" tabindex="-1" role="dialog"
+                     aria-labelledby="patientModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="patientModalLabel">Ordonnances du Patient</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" id="modalContent">
+                                <!-- Le contenu des ordonnances sera inséré ici -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
         <!--**********************************
             Content body end
         ***********************************-->
 
+        @endsection
+
+        @section('scripts')
+            <script>
+                $(document).ready(function () {
+                    $('.showPatientOrdonnancesButton').on('click', function () {
+                        var patientId = $(this).data('patient-id');
+
+                        $.ajax({
+                            url: '/patients/' + patientId + '/ordonnancesList',
+                            type: 'GET',
+                            success: function (response) {
+                                // Insérez le code HTML reçu dans le modal
+                                $('#modalContent').html(response.html);
+                                // Affichez le modal
+                                $('#patientModal').modal('show');
+                            },
+                            error: function (xhr) {
+                                // Gérez les erreurs ici
+                                console.error(xhr.responseText);
+                            }
+                        });
+                    });
+                    $('.showOrdonnanceButton').on('click', function () {
+                        var patientId = $(this).data('ordonnance-id');
+
+                        $.ajax({
+                            url: '/patients/' + patientId + '/ordonnancesList',
+                            type: 'GET',
+                            success: function (response) {
+                                $('#patientModal').modal('show');
+                                // Insérez le code HTML reçu dans le modal
+                                $('#modalContent').html(response.html);
+                                // Affichez le modal
+
+                            },
+                            error: function (xhr) {
+                                // Gérez les erreurs ici
+                                console.error(xhr.responseText);
+                            }
+                        });
+                    });
+                });
+
+            </script>
 @endsection

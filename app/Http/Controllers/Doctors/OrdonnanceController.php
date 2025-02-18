@@ -20,6 +20,7 @@ class OrdonnanceController
     {
         $ordonnances = Ordonnance::with(['prescription', 'prescription.doctor', 'prescription.patient', 'prescriptionMedication'])->get();
         $patients = Patient::with(['prescription.ordonnance'])->get();
+
         return view('Doctor.Ordonnance.index', compact('ordonnances', 'patients'));
 
     }
@@ -55,6 +56,7 @@ class OrdonnanceController
             'lastName' => 'required|string|max:255',
             'birthdate' => 'required|date',
             'email' => 'required|email',
+            'disease' => 'required|string',
             'gender' => 'required|string|max:255',
             'job' => 'required|string|max:255',
             'phoneNumber' => 'nullable|string|max:20',
@@ -73,6 +75,8 @@ class OrdonnanceController
             'address' => $patientData['place'],
             'job' => $patientData['job'],
             'gender' => $patientData['gender'],
+            'disease' => $patientData['disease'],
+
         ]);
 
 
@@ -107,9 +111,12 @@ class OrdonnanceController
                 }
             }
 
+            $timestamp = now()->format('YmdHis');
+            $codeOrdonnance = 'ORD-' . $timestamp;
+
             $ordonnance = Ordonnance::create([
                 'prescription_id' => $prescription->id,
-                'code' => 'gdgsdf',
+                'code' => $codeOrdonnance,
             ]);
         }
 

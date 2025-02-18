@@ -51,6 +51,7 @@ Route::prefix('patients')->name('patients.')->group(function () {
     Route::get('/{patient}/edit', [PatientsController::class, 'edit'])->name('edit');
     Route::put('/{patient}', [PatientsController::class, 'update'])->name('update');
     Route::delete('/{patient}', [PatientsController::class, 'destroy'])->name('destroy');
+    Route::get('/{patient}/ordonnancesList', [PatientsController::class, 'ordonnancesList'])->name('ordonnances_list');
 });
 
 
