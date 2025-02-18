@@ -2,7 +2,7 @@
     <table class="table">
         <thead>
         <tr>
-            <th>Nom de l'ordonnance</th>
+            <th>Code de l'ordonnance</th>
             <th>Date de création</th>
             <th>Action</th>
         </tr>
@@ -10,7 +10,7 @@
         <tbody>
         @foreach($ordonnances as $ordonnance)
             <tr>
-                <td>{{ $ordonnance->nom }}</td>
+                <td>{{ $ordonnance->code }}</td>
                 <td>{{ $ordonnance->created_at->formatLocalized('%A %d %B %Y à %H:%M') }}</td>
                 <td>
                     <div class="d-flex">

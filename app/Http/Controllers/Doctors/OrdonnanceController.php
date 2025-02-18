@@ -75,7 +75,6 @@ class OrdonnanceController
             'address' => $patientData['place'],
             'job' => $patientData['job'],
             'gender' => $patientData['gender'],
-            'disease' => $patientData['disease'],
 
         ]);
 
@@ -86,6 +85,7 @@ class OrdonnanceController
                 [
                     'doctor_id' => Auth::user()->id ?? 1,
                     'patient_id' => $patient->id,
+                    'disease' => $patientData['disease'],
                 ]
             );
             // Parcours des paires médication et posologie

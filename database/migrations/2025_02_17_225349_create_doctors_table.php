@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
@@ -19,8 +20,8 @@ return new class extends Migration {
             $table->string('photo')->nullable()->nullable(); // Photo du médecin
             $table->timestamps();
         });
-         // Ajouter une contrainte pour s'assurer que seuls les users de rôle "doctor" existent dans la table "doctors"
-         DB::statement("ALTER TABLE doctors ADD CONSTRAINT chk_doctor_role CHECK (user_id IN (SELECT id FROM users WHERE role = 'doctor'))");
+//         // Ajouter une contrainte pour s'assurer que seuls les users de rôle "doctor" existent dans la table "doctors"
+//         DB::statement("ALTER TABLE doctors ADD CONSTRAINT chk_doctor_role CHECK (user_id IN (SELECT id FROM users WHERE role = 'doctor'))");
     }
 
     public function down() {

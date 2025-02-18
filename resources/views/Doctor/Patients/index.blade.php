@@ -40,7 +40,8 @@
                                         @foreach($patients as $patient)
                                             <tr>
                                                 <td><img class="rounded-circle" width="35"
-                                                         src="images/profile/small/pic1.jpg" alt=""></td>
+                                                         src="{{ 'images/profile/small/' . ($patient->gender == 'Masculin' ? 'male.jpg' : 'female.jpg') }}"
+                                                         alt=""></td>
                                                 <td>{{ $patient->firstname . ' ' . $patient->lastname }}</td>
                                                 <td>{{ $patient->job }}</td>
                                                 <td>{{ $patient->gender }}</td>

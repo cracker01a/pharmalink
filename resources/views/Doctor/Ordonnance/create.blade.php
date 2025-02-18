@@ -239,7 +239,6 @@
                     timeData.push({medication, posologie});
                 });
 
-                console.log(serviceData,timeData)
                 $.ajax({
                     url: @json(route('Ordonnance.store')),
                     type: "POST",
@@ -249,13 +248,13 @@
                         "X-CSRF-TOKEN": @json(csrf_token()),
                     },
                     success: function (response) {
-                        alert("Formulaire soumis avec succès : " + response.message);
-                        console.log(response);
+
+                        window.location.href = '{{ route("Ordonnance.index") }}';
 
                     },
                     error: function (xhr) {
-                        alert("Erreur lors de la soumission : " + xhr.responseText);
-                        console.error(xhr.responseText);
+                        // alert("Erreur lors de la soumission : " + xhr.responseText);
+                        // console.error(xhr.responseText);
                     }
                 });
             });
