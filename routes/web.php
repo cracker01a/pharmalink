@@ -31,7 +31,8 @@ use Illuminate\Support\Facades\Auth;
 
 // Route::get('/dash', [UserController::class, 'home'])->name('home');
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', [UserController::class, 'home'])->name('home');
+    Route::get('/dash', [UserController::class, 'home'])->name('home');
+    Route::get('/', [UserController::class, 'home1']);
     // Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 });
 

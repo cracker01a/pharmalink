@@ -26,6 +26,10 @@ class UserController extends Controller
     {
         return view('layouts.dash');
     }
+    public function home1()
+    {
+        return view('auth.login');
+    }
 
     public function index()
     {

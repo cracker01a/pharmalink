@@ -63,6 +63,7 @@ class AuthController extends Controller
 
             return back()->withErrors(['password' => 'Mot de passe incorrect.']);
         }
+        return view('layouts.dash');
     }
 
     public function log(){
