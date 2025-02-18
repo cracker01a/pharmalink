@@ -16,9 +16,9 @@ return new class extends Migration {
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('hopital')->nullable();;
+            $table->string('hopital')->nullable();
             $table->string('email')->unique();
-            $table->string('password')->nullable();;
+            $table->string('password')->nullable();
             $table->enum('role', ['doctor', 'admin'])->default('doctor');
             $table->boolean('is_active')->default(false);
             $table->timestamps();

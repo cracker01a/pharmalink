@@ -23,7 +23,13 @@ Route::get('/', function () {
     return view('layouts.dash');
 });
 
-Route::get('/', [UserController::class, 'home'])->name('home');
+// Route::get('/profile', [ProfileController::class, 'index'])->name('profile')
+
+// Route::get('/dash', [UserController::class, 'home'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [UserController::class, 'home'])->name('home');
+    // Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+});
 
 
 Route::prefix('medication')->name('medications.')->group(function () {
@@ -59,19 +65,41 @@ Route::get('/users/create', [UserController::class, 'create'])->name('users.crea
 Route::get('/users/index', [UserController::class, 'index'])->name('users.index');
 Route::post('/users', [UserController::class, 'store'])->name('users.store');
 
-Route::delete('/users/{id}',[UserController::class, 'destroy'])->name('users.destroy');
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::get('/users/{id}', [UserController::class, 'edit'])->name('users.edit');
-Route::put('/users/{id}',[UserController::class, 'update'])->name('users.update');
+Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
 
 Route::get('/Ordonnance/list', [OrdonnanceController::class, 'index'])->name('Ordonnance.index');
 Route::get('/Ordonnance/create', [OrdonnanceController::class, 'create'])->name('Ordonnance.create');
 Route::post('/Ordonnance/create', [OrdonnanceController::class, 'store'])->name('Ordonnance.store');
 Route::get('/Ordonnance/test', [OrdonnanceController::class, 'test'])->name('Ordonnance.test');
-
-
+//dowlload and preview prescription route
 //dowlload and preview prescription route
 Route::get('/preview', [PreviewController::class, 'index'])->name('preview.index');
 Route::get('/bull', [previewController::class, 'index1']);
 Route::post('/view', [previewController::class, 'viewPDF'])->name('viewPDF');
 
 Route::post('/download-pdf', [previewController::class, 'downloadPDF'])->name('downloadPDF');
+
+
+
+
+// Vérification de l'email
+Route::post('/check-email', [AuthController::class, 'checkEmail']);
+
+// Connexion
+Route::get('/login', [AuthController::class, 'log'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+//deconnexion
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+
+Route::get('/profile-Doctor', [ProfileDoctorController::class, 'index'])->name('profile');
+Route::post('/doctor/update', [ProfileDoctorController::class, 'update'])->name('doctor.update');
+
+
+
+
+
+

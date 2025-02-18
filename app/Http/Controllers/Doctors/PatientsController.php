@@ -61,12 +61,12 @@ class PatientsController
 
     public function show(Patient $patient)
     {
-        return view('Doctor/patients.show', compact('patient'));
+        return view('patients.show', compact('patient'));
     }
 
     public function edit(Patient $patient)
     {
-        return view('Doctor/patients.edit', compact('patient'));
+        return view('patients.edit', compact('patient'));
     }
 
     public function update(Request $request, Patient $patient)
