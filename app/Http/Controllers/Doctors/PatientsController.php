@@ -14,12 +14,7 @@ class PatientsController
         $patients = Patient::with(['prescription.ordonnance'])->get();
 
 
-        // Logique pour récupérer les ordonnances du patient
-        $prescriptions = $patients->last()->prescription;
-        $ordonnances = collect();
-        foreach ($prescriptions as $prescription) {
-            $ordonnances->push($prescription->ordonnance);
-        }
+
         return view('Doctor/patients.index', compact('ordonnances', 'patients'));
 
     }
