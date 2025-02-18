@@ -143,6 +143,13 @@
         Content body end
     ***********************************-->
 
+    <div id="loader"
+         class="position-fixed top-0 start-0 w-100 h-100 bg-white bg-opacity-75 d-flex align-items-center justify-content-center d-none">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Chargement...</span>
+        </div>
+    </div>
+
 @endsection
 
 
@@ -220,6 +227,7 @@
         $(document).ready(function () {
 
             $("#submit-btn").click(function () {
+                $('#loader').removeClass('d-none');
                 let serviceData = {
                     firstName: $("input[name='firstName']").val(),
                     lastName: $("input[name='lastName']").val(),
@@ -250,9 +258,11 @@
                     success: function (response) {
 
                         window.location.href = '{{ route("Ordonnance.index") }}';
+                        $('#loader').addClass('d-none');
 
                     },
                     error: function (xhr) {
+                        $('#loader').addClass('d-none');
                         // alert("Erreur lors de la soumission : " + xhr.responseText);
                         // console.error(xhr.responseText);
                     }
