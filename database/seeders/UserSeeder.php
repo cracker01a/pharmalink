@@ -20,13 +20,16 @@ class UserSeeder extends Seeder
             'hopital'   => null,
             'email' => 'admin@example.com',
             'password' => Hash::make('123456789'),
-            
+
             'role' => 'admin',
             'is_active' => 1,
             'created_at' => now(),
             'updated_at' => now(),
+
         ]);
+
+
     }
 
-    
+
 }

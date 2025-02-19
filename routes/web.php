@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::prefix('medication')->name('medications.')->group(function () {
+Route::prefix('medication')->name('medications.')->middleware(['auth'])->group(function () {
     // Afficher la liste des médicaments
     Route::get('/', [MedicationsController::class, 'index'])->name('index');
 
@@ -51,7 +51,7 @@ Route::prefix('medication')->name('medications.')->group(function () {
 });
 
 
-Route::prefix('patients')->name('patients.')->group(function () {
+Route::prefix('patients')->name('patients.')->middleware(['auth'])->group(function () {
     Route::get('/', [PatientsController::class, 'index'])->name('index');
     Route::get('/create', [PatientsController::class, 'create'])->name('create');
     Route::post('/store', [PatientsController::class, 'store'])->name('store');

@@ -1,12 +1,12 @@
+@php use Illuminate\Support\Facades\Auth; @endphp
 @extends('partials.master')
 
 @section('content')
 
     @php
-       
+
         $user = Auth::user();
         $doctor = $user->doctor; // Récupère les infos du doctor lié à l'utilisateur
-        
     @endphp
 <div class="content-body">
     <div class="container-fluid">
@@ -14,7 +14,7 @@
             <h4>Profile</h4>
             <ol class="breadcrumb">
                 <!-- <!-- <li class="breadcrumb-item"><a href="javascript:void(0)">App</a></li> -->
-                <li class="breadcrumb-item active"><a href="javascript:void(0)"> Bienvenue sur votre Profile</a></li> 
+                <li class="breadcrumb-item active"><a href="javascript:void(0)"> Bienvenue sur votre Profile</a></li>
             </ol>
         </div>
         <!-- row -->
@@ -38,7 +38,7 @@
                                     <h4 class="text-muted mb-0">info@example.com</h4>
                                     <p>Email</p>
                                 </div>
-                            
+
                             </div>
                         </div>
                     </div>
@@ -58,10 +58,10 @@
                                     <div class="col">
                                         <h3 class="m-b-0">140</h3><span>Patients</span>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="mt-4">
-                                    <a href="javascript:void()" class="btn btn-primary mb-1 me-1">Ordonnances</a> 
+                                    <a href="javascript:void()" class="btn btn-primary mb-1 me-1">Ordonnances</a>
                                     <a href="javascript:void()" class="btn btn-primary mb-1" data-bs-toggle="modal" data-bs-target="#sendMessageModal">Patients</a>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <form class="comment-form">
-                                                <div class="row"> 
+                                                <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
                                                             <label class="text-black font-w600">Name <span class="required">*</span></label>
@@ -106,7 +106,7 @@
                                 </div>
                             </div>
                         </div>
-                 
+
                     </div>
                 </div>
             </div>
@@ -127,9 +127,9 @@
                                     <!-- <div id="my-posts" class="tab-pane fade active ">
                                         <div class="my-post-content pt-3">
                                             <div class="post-input">
-                                                <textarea name="textarea" id="textarea" cols="30" rows="5" class="form-control bg-transparent" placeholder="Please type what you want...."></textarea> 
+                                                <textarea name="textarea" id="textarea" cols="30" rows="5" class="form-control bg-transparent" placeholder="Please type what you want...."></textarea>
                                                 <a href="javascript:void(0);" class="btn btn-primary light px-3" data-bs-toggle="modal" data-bs-target="#linkModal"><i class="fa fa-link m-0"></i> </a>
-                                                 Modal 
+                                                 Modal
                                                 <div class="modal fade" id="linkModal">
                                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                                         <div class="modal-content">
@@ -150,9 +150,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                            
+
                                                 <a href="javascript:void(0);" class="btn btn-primary light me-1 px-3" data-bs-toggle="modal" data-bs-target="#cameraModal"><i class="fa fa-camera m-0"></i></a>
-                                                 Modal 
+                                                 Modal
                                                 <div class="modal fade" id="cameraModal">
                                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                                         <div class="modal-content">
@@ -173,7 +173,7 @@
                                                     </div>
                                                 </div>
                                                 <a href="javascript:void(0);" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#postModal">Post</a>
-                                                <!-- Modal 
+                                                <!-- Modal
                                                 <div class="modal fade" id="postModal">
                                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                                         <div class="modal-content">
@@ -184,13 +184,13 @@
                                                             </div>
                                                             <div class="modal-body">
                                                                     <textarea name="textarea" id="textarea1" cols="30" rows="5" class="form-control bg-transparent" placeholder="Please type what you want...."></textarea>
-                                                                    <a class="btn btn-primary" href="javascript:void(0)">Post</a>																		 
+                                                                    <a class="btn btn-primary" href="javascript:void(0)">Post</a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="profile-uoloaded-post border-bottom-1 pb-5">
                                                 <img src="images/profile/8.jpg" alt="" class="img-fluid">
                                                 <a class="post-title" href="post-details.html"><h3 class="text-black">Collection of textile samples lay spread</h3></a>
@@ -257,7 +257,7 @@
                                                 </div>
                                                 <div class="col-9"><span>{{ $user->email ?? 'Not available' }}</span></div>
                                             </div>
-                                           
+
                                             <div class="row mb-2">
                                                 <div class="col-3">
                                                     <h5 class="f-w-500">Age <span class="pull-right">:</span></h5>
@@ -279,7 +279,7 @@
                                         </div>
                                     </div>
 
-                                  
+
 
                             <div id="profile-settings" class="tab-pane fade">
                                     <div class="pt-3">
