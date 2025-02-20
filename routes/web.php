@@ -71,11 +71,14 @@ Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.de
 Route::get('/users/{id}', [UserController::class, 'edit'])->name('users.edit');
 Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
 
-Route::get('/Ordonnance/list', [OrdonnanceController::class, 'index'])->name('Ordonnance.index');
-Route::get('/Ordonnance/create', [OrdonnanceController::class, 'create'])->name('Ordonnance.create');
-Route::post('/Ordonnance/create', [OrdonnanceController::class, 'store'])->name('Ordonnance.store');
-Route::get('/Ordonnance/test', [OrdonnanceController::class, 'test'])->name('Ordonnance.test');
-//dowlload and preview prescription route
+Route::prefix('ordonnances')->name('Ordonnance.')->middleware(['auth'])->group(function (){
+    Route::get('/list', [OrdonnanceController::class, 'index'])->name('index');
+    Route::get('/create', [OrdonnanceController::class, 'create'])->name('create');
+    Route::post('/create', [OrdonnanceController::class, 'store'])->name('store');
+    Route::get('/test', [OrdonnanceController::class, 'test'])->name('test');
+});
+
+
 //dowlload and preview prescription route
 Route::get('/preview', [PreviewController::class, 'index'])->name('preview.index');
 Route::get('/bull', [previewController::class, 'index1']);

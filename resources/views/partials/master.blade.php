@@ -21,8 +21,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Title -->
-	<title>@yield('title')</title>
+	<title> PharmaLink || @yield('title')</title>
     <!-- Favicon icon -->
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
       <!-- Form step -->
     <link href="vendor/jquery-smartwizard/dist/css/smart_wizard.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">

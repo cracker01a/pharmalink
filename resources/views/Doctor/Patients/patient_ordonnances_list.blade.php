@@ -11,12 +11,20 @@
         @foreach($ordonnances as $ordonnance)
             <tr>
                 <td>{{ $ordonnance->code }}</td>
-                <td>{{ $ordonnance->created_at->formatLocalized('%A %d %B %Y à %H:%M') }}</td>
+                <td>{{ $ordonnance->created_at->formatLocalized('%A %d %B %Y') }}</td>
                 <td>
-                    <div class="d-flex">
-                        <a class="btn btn-primary shadow btn-xs sharp showOrdonnanceButton"
-                           data-ordonnance-id="{{$ordonnance->id}}"><i
-                                class="fa fa-eye"></i></a>
+                    <button class="btn btn-primary shadow btn-xs sharp" data-bs-toggle="collapse"
+                            data-bs-target="#accordion-{{$ordonnance->id}}">
+                        <i class="fa fa-info-circle"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr id="accordion-{{$ordonnance->id}}" class="collapse">
+                <td colspan="3">
+                    <div>
+                        <p><strong>Code:</strong> {{ $ordonnance->code }}</p>
+                        <p><strong>Date de création:</strong> {{ $ordonnance->created_at }}</p>
+                        <!-- Ajoutez d'autres informations de l'ordonnance ici -->
                     </div>
                 </td>
             </tr>

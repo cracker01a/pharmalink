@@ -2,8 +2,10 @@
 <html lang="en" class="h-100">
 <head>
     <meta charset="utf-8">
+    <base href="{{ asset('./') }}">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login Form with Animations</title>
+    <title>Login</title>
     <link href="css/style.css" rel="stylesheet">
     <style>
         /* Animation au chargement */
@@ -12,7 +14,7 @@
             transform: translateY(-20px);
             animation: fadeIn 0.8s ease-out forwards;
         }
-        
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -102,13 +104,13 @@
         <button type="submit" class="btn btn-primary">Se connecter</button>
     </form> -->
 
-    
+
     <script>
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
             let email = document.getElementById("email");
             let password = document.getElementById("password");
-            
+
             if (email.value === "" || password.value === "") {
                 if (email.value === "") email.classList.add("error");
                 if (password.value === "") password.classList.add("error");

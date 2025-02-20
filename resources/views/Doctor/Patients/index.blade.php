@@ -1,5 +1,10 @@
 @extends('partials.master')
 
+@section('title')
+    Liste Des Patients
+
+@endsection
+
 @section('content')
 
     <div class="content-body">
@@ -80,9 +85,8 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="patientModalLabel">Ordonnances du Patient</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                             </div>
                             <div class="modal-body" id="modalContent">
                                 <!-- Le contenu des ordonnances sera inséré ici -->
@@ -93,16 +97,25 @@
 
 
             </div>
+            <div id="loader"
+                 class="position-fixed top-0 start-0 w-100 h-100 bg-white bg-opacity-75 d-flex align-items-center justify-content-center d-none">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Chargement...</span>
+                </div>
+            </div>
         </div>
     </div>
-
 @endsection
 
 @section('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.showPatientOrdonnancesButton').on('click', function () {
+                $('#loader').removeClass('d-none');
                 var patientId = $(this).data('patient-id');
+                console.log('fasfasf');
 
                 $.ajax({
                     url: '/patients/' + patientId + '/ordonnancesList',
@@ -111,28 +124,12 @@
                         // Insérez le code HTML reçu dans le modal
                         $('#modalContent').html(response.html);
                         // Affichez le modal
+                        $('#loader').addClass('d-none');
                         $('#patientModal').modal('show');
                     },
                     error: function (xhr) {
                         // Gérez les erreurs ici
-                        console.error(xhr.responseText);
-                    }
-                });
-            });
-            $('.showOrdonnanceButton').on('click', function () {
-                var patientId = $(this).data('ordonnance-id');
-
-                $.ajax({
-                    url: '/patients/' + patientId + '/ordonnancesList',
-                    type: 'GET',
-                    success: function (response) {
-                        // Insérez le code HTML reçu dans le modal
-                        $('#modalContent').html(response.html);
-                        // Affichez le modal
-                        $('#patientModal').modal('show');
-                    },
-                    error: function (xhr) {
-                        // Gérez les erreurs ici
+                        $('#loader').addClass('d-none');
                         console.error(xhr.responseText);
                     }
                 });
@@ -140,4 +137,6 @@
         });
 
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
 @endsection
