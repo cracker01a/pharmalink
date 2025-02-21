@@ -76,6 +76,7 @@ Route::prefix('ordonnances')->name('Ordonnance.')->middleware(['auth'])->group(f
     Route::get('/create', [OrdonnanceController::class, 'create'])->name('create');
     Route::post('/create', [OrdonnanceController::class, 'store'])->name('store');
     Route::get('/test', [OrdonnanceController::class, 'test'])->name('test');
+    Route::get('/{ordonnance}/ordonnanceDetails', [OrdonnanceController::class, 'details'])->name('details');
 });
 
 

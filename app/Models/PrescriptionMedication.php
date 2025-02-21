@@ -25,10 +25,8 @@ class PrescriptionMedication extends Model
         return $this->belongsTo(User::class, 'doctor_id');
     }
 
-    public function medications()
+    public function medication()
     {
-        return $this->belongsToMany(Medication::class, 'prescription_medications')
-            ->withPivot('posology')
-            ->withTimestamps();
+        return $this->belongsTo(Medication::class);
     }
 }

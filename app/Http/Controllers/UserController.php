@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\Tools;
 use App\Models\User;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -66,6 +67,20 @@ class UserController extends Controller
 
                 if ($create_user) $create = $create + 1;
             }
+        }
+         // Si le rôle est "doctor", on crée une entrée dans la table doctors
+         if ($role === 'doctor') {
+            Doctor::create([
+                'user_id' => $create_user->id,
+                'specialite' => $user['specialite'] ?? null,
+                'hopital' => $user['hopital'] ?? null,
+                'age' => $user['age'] ?? null,
+                'adresse' => $user['adresse'] ?? null,
+                'annee_experience' => $user['annee_experience'] ?? null,
+                'competences' => $user['competences'] ?? null,
+                'description' => $user['description'] ?? null,
+                'photo' => $user['photo'] ?? null,
+            ]);
         }
 
         if (isset($create_user)) {

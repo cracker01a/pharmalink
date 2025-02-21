@@ -696,7 +696,7 @@
 							</li> -->
                             <li class="nav-item dropdown header-profile">
                                <a class="nav-link" href="javascript:void(0)" role="button" data-bs-toggle="dropdown">
-                                    <i class="fa-solid fa-gear" style="font-size: 24px;" ></i> <!-- Icône de paramètre -->
+                                    <i class="fa-solid fa-gear" style="font-size: 45px;" ></i> <!-- Icône de paramètre -->
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end">

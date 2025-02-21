@@ -1,5 +1,9 @@
 @extends('partials.master')
 
+@section('title')
+    Nouvelle Ordonnance
+@endsection
+
 @section('content')
 
     <!--**********************************

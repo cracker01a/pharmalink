@@ -11,9 +11,12 @@ class Ordonnance extends Model
 
     protected $guarded = [];
 
-    public function prescriptionMedication()
+    /**
+     * Relation avec les PrescriptionMedications.
+     */
+    public function prescriptionMedications()
     {
-        return $this->belongsTo(PrescriptionMedication::class);
+        return $this->hasMany(PrescriptionMedication::class, 'prescription_id', 'prescription_id');
     }
 
     public function prescription()

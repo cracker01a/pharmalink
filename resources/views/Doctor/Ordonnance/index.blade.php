@@ -45,8 +45,8 @@
                                                 <td>{{ $ordonnance->created_at->formatLocalized('%A %d %B %Y à %H:%M') }}</td>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a class="btn btn-primary shadow btn-xs sharp showPatientOrdonnancesButton"
-                                                           data-patient-id="{{$ordonnance->id}}"><i
+                                                        <a class="btn btn-primary shadow btn-xs sharp showOrdonnanceDetailsButton"
+                                                           data-ordonnance-id="{{$ordonnance->id}}"><i
                                                                 class="fa fa-eye"></i></a>
                                                     </div>
                                                 </td>
@@ -69,12 +69,10 @@
                      aria-labelledby="patientModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-
                             <div class="modal-header">
                                 <h5 class="modal-title" id="patientModalLabel">Ordonnances du Patient</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                             </div>
                             <div class="modal-body" id="modalContent">
                                 <!-- Le contenu des ordonnances sera inséré ici -->
@@ -86,6 +84,13 @@
 
             </div>
         </div>
+
+        <div id="loader"
+                 class="position-fixed top-0 start-0 w-100 h-100 bg-white bg-opacity-75 d-flex align-items-center justify-content-center d-none">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Chargement...</span>
+                </div>
+            </div>
         <!--**********************************
             Content body end
         ***********************************-->
@@ -95,20 +100,24 @@
         @section('scripts')
             <script>
                 $(document).ready(function () {
-                    $('.showPatientOrdonnancesButton').on('click', function () {
-                        var patientId = $(this).data('patient-id');
-
+                    $('.showOrdonnanceDetailsButton').on('click', function () {
+                        $('#loader').removeClass('d-none');
+                        var ordonnanceId = $(this).data('ordonnance-id');
+                        
                         $.ajax({
-                            url: '/patients/' + patientId + '/ordonnancesList',
+                            url: '/ordonnances/' + ordonnanceId + '/ordonnanceDetails',
                             type: 'GET',
                             success: function (response) {
+                                
                                 // Insérez le code HTML reçu dans le modal
                                 $('#modalContent').html(response.html);
                                 // Affichez le modal
                                 $('#patientModal').modal('show');
+                                $('#loader').addClass('d-none');
                             },
                             error: function (xhr) {
                                 // Gérez les erreurs ici
+                                $('#loader').addClass('d-none');
                                 console.error(xhr.responseText);
                             }
                         });

@@ -10,7 +10,7 @@ class PatientsController
 {
     public function index()
     {
-        $ordonnances = Ordonnance::with(['prescription', 'prescription.doctor', 'prescription.patient', 'prescriptionMedication'])->get();
+        $ordonnances = Ordonnance::with(['prescription', 'prescription.doctor', 'prescription.patient', 'prescriptionMedications'])->get();
         $patients = Patient::with(['prescription.ordonnance'])->get();
 
 

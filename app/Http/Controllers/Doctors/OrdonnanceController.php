@@ -18,12 +18,22 @@ class OrdonnanceController
      */
     public function index()
     {
-        $ordonnances = Ordonnance::with(['prescription', 'prescription.doctor', 'prescription.patient', 'prescriptionMedication'])->get();
+        $ordonnances = Ordonnance::with(['prescription', 'prescription.doctor', 'prescription.patient', 'prescriptionMedications'])->get();
         $patients = Patient::with(['prescription.ordonnance'])->get();
-
         return view('Doctor.Ordonnance.index', compact('ordonnances', 'patients'));
 
     }
+
+    public function details(Ordonnance $ordonnance)
+{
+    // Charger les relations nécessaires
+    $ordonnance->load(['prescription', 'prescription.doctor', 'prescription.patient', 'prescriptionMedications.medication']);
+
+    // Générer le HTML à retourner
+    $html = view('Doctor.Ordonnance.ordonnance-details', compact('ordonnance'))->render();
+    // Retourner les détails de l'ordonnance sous format JSON
+    return response()->json(['html' => $html]);
+}
 
     /**
      * Enregistrer une nouvelle ordonnance.
