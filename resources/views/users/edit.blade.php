@@ -6,17 +6,13 @@
     <div class="container-fluid">
         <div class="page-titles">
             <h4>Modification de l'utilisateur « ".$user->firstname." »",</h4>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">Ajouter un utilisateur</a></li>
-            </ol>
         </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Formulaire de Modification</h4>
-                       
+
                     </div>
                     <div class="card-body">
                         <div class="form-validation">
@@ -41,12 +37,12 @@
                                                 <span class="error">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            
+
                                         </div>
 
                                         <!-- Email et Rôle sur la même ligne -->
                                         <div class="row mb-3">
-                                             
+
                                             <div class="col-lg-6">
                                                 <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                                                 <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $user->email) }}" placeholder="Ex : email@example.com">
@@ -64,12 +60,12 @@
                                             <option value="doctor" {{ old('user.0.role') == 'doctor' ? 'selected' : '' }}>Doctor</option>
                                                 </select>
                                             </div>
-                                           
+
                                         </div>
 
                                         <!-- Actif sur une ligne seule -->
                                         <div class="row mb-3">
-                                          
+
                                             <div class="col-lg-6">
                                                 <label for="is_active" class="form-label">Actif</label>
                                                 <select class="form-select" name="user[0][is_active]">

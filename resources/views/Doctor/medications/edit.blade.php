@@ -7,12 +7,7 @@
             <div class="page-titles">
                 <h4>Medicaments</h4>
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class=""><a href="{{ route('home') }}">Dashboard</a> >></li>
-                        <li class=""><a href="{{ route('medications.index') }}"> Médicaments</a> >></li>
-                        <li class=""><a href=""></a> Modifier >> </li>
-                        <li class=""><a href=""></a> {{$medication->name}}</li>
-                    </ol>
+
                 </nav>
 
 

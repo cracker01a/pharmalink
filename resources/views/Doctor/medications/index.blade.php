@@ -7,10 +7,6 @@
     <div class="container-fluid">
         <div class="page-titles">
             <h4>Medicaments</h4>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                <li class="breadcrumb-item "><a href="javascript:void(0)">Medicaments</a></li>
-            </ol>
         </div>
         <!-- row -->
 
@@ -29,7 +25,6 @@
                                 <tr>
                                     <th style="width:80px;"><strong>#</strong></th>
                                     <th><strong>Nom</strong></th>
-                                    <th><strong>Dosage</strong></th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -38,7 +33,6 @@
                                 <tr>
                                     <td><strong>01</strong></td>
                                     <td>{{ $medication->name }}</td>
-                                    <td>{{$medication->dosage}}</td>
                                     <td>
                                         <div class="dropdown">
                                             <button type="button" class="btn btn-success light sharp"

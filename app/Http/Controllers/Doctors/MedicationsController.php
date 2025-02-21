@@ -23,7 +23,6 @@ class MedicationsController
     {
         $validatedData = $request->validate([
             'name' => 'required',
-            'dosage' => 'required',
         ]);
 
         $medication = Medication::create($validatedData);

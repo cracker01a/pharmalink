@@ -6,7 +6,7 @@
                     <span class="nav-text">Tableau de bord</span>
                 </a>
             </li>
-
+            @if($user->doctor != null )
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="fas fa-users"></i>
                     <span class="nav-text">Users</span>
@@ -16,6 +16,7 @@
                     <li><a href="{{ route('users.index') }}">List</a></li>
                 </ul>
             </li>
+            @endif
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="fas fa-pills"></i>
                     <span class="nav-text">Medicaments</span>

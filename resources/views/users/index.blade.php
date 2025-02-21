@@ -4,15 +4,11 @@
 
 
 <div class="content-body">
-   
+
         <div class="container-fluid">
             <div class="page-titles d-flex justify-content-between align-items-center">
                 <div>
-                    <h4>Bootstrap</h4>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Bootstrap</a></li>
-                    </ol>
+                    <h4>Utilisateurs</h4>
                 </div>
                 <div>
                 <a href="{{ route('users.create') }}" class="btn btn-primary">Ajouter des utilisateurs</a>
@@ -68,12 +64,12 @@
                                                 <div class="dropdown-menu">
                                                    <ul class="link-list-opt no-bdr">
                                                     <li class="btn">
-                                                        
+
                                                         <a href="{{ route('users.edit', $user->id) }}">
                                                                 <em class="icon ni ni-trash"></em>
                                                                <span >Modifier</span>
                                                         </a>
-                                                        
+
                                                     </li>
                                                    </ul>
 
@@ -93,15 +89,15 @@
                                     </tr>
                                     @endforeach
 
-                                    
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-           
-            
+
+
         </div>
     </div>
 </div>
