@@ -11,10 +11,7 @@
         <div class="container-fluid">
             <div class="page-titles">
                 <h4>Patients</h4>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                    <li class="breadcrumb-item "><a href="javascript:void(0)">Patients</a></li>
-                </ol>
+            
             </div>
             <!-- row -->
 

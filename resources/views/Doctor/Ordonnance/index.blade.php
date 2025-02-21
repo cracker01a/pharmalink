@@ -8,10 +8,7 @@
         <div class="container-fluid">
             <div class="page-titles">
                 <h4>Ordonnance</h4>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Ordonnance</a></li>
-                </ol>
+                
             </div>
             <!-- row -->
 

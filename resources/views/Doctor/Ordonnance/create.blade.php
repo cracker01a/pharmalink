@@ -13,10 +13,6 @@
         <div class="container-fluid">
             <div class="page-titles">
                 <h4>Ordonnance</h4>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)"></a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)"></a></li>
-                </ol>
             </div>
             <!-- row -->
             <div class="row">

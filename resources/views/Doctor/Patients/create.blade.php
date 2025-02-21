@@ -5,13 +5,9 @@
     <div class="content-body">
         <div class="container-fluid">
             <div class="page-titles">
-                <h4>Medicaments</h4>
+                <h4>Patients</h4>
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class=""><a href="{{ route('home') }}">Dashboard</a> >></li>
-                        <li class=""><a href="{{ route('medications.index') }}"> Médicaments</a> >></li>
-                        <li class="active" aria-current="page"> Ajouter</li>
-                    </ol>
+                    
                 </nav>
 
 
@@ -22,7 +18,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center">
-                            <h4 class="card-title">Liste Des Médicaments</h4>
+                            <h4 class="card-title"></h4>
                             <a href="{{ route('medications.create') }}" class="btn btn-primary">Ajouter</a>
                         </div>
 
