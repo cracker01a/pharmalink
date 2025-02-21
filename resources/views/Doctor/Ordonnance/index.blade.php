@@ -45,6 +45,21 @@
                                                         <a class="btn btn-primary shadow btn-xs sharp showOrdonnanceDetailsButton"
                                                            data-ordonnance-id="{{$ordonnance->id}}"><i
                                                                 class="fa fa-eye"></i></a>
+                                                                <form action="{{ route('viewPDF') }}" method="POST" class="mx-1">
+                                                                    @csrf
+                                                                    <input type="hidden" name="ordonnance_id" value="{{ $ordonnance->id }}">
+                                                                    <button type="submit" class="btn btn-info shadow btn-xs sharp">
+                                                                        <i class="fa fa-file"></i>
+                                                                    </button>
+                                                                </form>
+                                                                <form action="{{ route('downloadPDF') }}" method="POST">
+                                                                    @csrf
+                                                                    <input type="hidden" name="ordonnance_id" value="{{ $ordonnance->id }}">
+                                                                    <button type="submit" class="btn btn-success shadow btn-xs sharp">
+                                                                        <i class="fa fa-download"></i>
+                                                                    </button>
+                                                                </form>
+                    
                                                     </div>
                                                 </td>
                                             </tr>

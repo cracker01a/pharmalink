@@ -6,7 +6,7 @@
                     <span class="nav-text">Tableau de bord</span>
                 </a>
             </li>
-            @if($user->doctor != null )
+            @if(Auth::user()->id ==1  )
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="fas fa-users"></i>
                     <span class="nav-text">Users</span>
