@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Doctor;
 
 class AuthController extends Controller
 {
@@ -41,6 +42,19 @@ class AuthController extends Controller
 
         if ($attempts >= 5) {
             return back()->withErrors(['email' => 'Trop de tentatives. Réessayez plus tard.']);
+        }
+         // Vérifier si l'utilisateur est un doctor
+         if ($user->role === 'doctor') {
+            $doctor = Doctor::where('user_id', $user->id)->first();
+
+            // Vérifier si des champs obligatoires sont NULL
+            if ($doctor && (is_null($doctor->specialite) || is_null($doctor->hopital) || is_null($doctor->age) || 
+                            is_null($doctor->adresse) || is_null($doctor->annee_experience) || 
+                            is_null($doctor->competences) || is_null($doctor->description) || is_null($doctor->photo))) {
+                
+                // Stocker une variable de session pour afficher le popup
+                session(['show_popup' => true]);
+            }
         }
 
         if (is_null($user->password)) {

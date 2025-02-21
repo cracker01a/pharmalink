@@ -6,7 +6,12 @@
     @php
 
         $user = Auth::user();
+<<<<<<< HEAD
         $doctor = $user->doctor; // Récupère les infos du doctor lié à l'utilisateur
+=======
+        // Récupère les infos du doctor lié à l'utilisateur
+        
+>>>>>>> b26e573 (dd)
     @endphp
 <div class="content-body">
     <div class="container-fluid">
@@ -25,17 +30,17 @@
                         <div class="photo-content">
                             <div class="cover-photo"></div>
                         </div>
-                        <div class="profile-info">
+                        <div class="profile-info"> 
                             <div class="profile-photo">
-                                <img src="images/profile/profile.png" class="img-fluid rounded-circle" alt="">
+                                <img src="images/profile/small/male.jpg" class="img-fluid rounded-circle" alt="">
                             </div>
                             <div class="profile-details">
                                 <div class="profile-name px-3 pt-2">
-                                    <h4 class="text-primary mb-0">Mitchell C. Shay</h4>
-                                    <p>UX / UI Designer</p>
+                                    <h4 class="text-primary mb-0">{{ $user->firstname }} {{ $user->lastname }}</h4>
+                                    <p>{{ $doctor->specialite }}</p>
                                 </div>
                                 <div class="profile-email px-2 pt-2">
-                                    <h4 class="text-muted mb-0">info@example.com</h4>
+                                    <h4 class="text-muted mb-0">{{ $user->email }}</h4>
                                     <p>Email</p>
                                 </div>
 
@@ -61,8 +66,13 @@
 
                                 </div>
                                 <div class="mt-4">
+<<<<<<< HEAD
                                     <a href="javascript:void()" class="btn btn-primary mb-1 me-1">Ordonnances</a>
                                     <a href="javascript:void()" class="btn btn-primary mb-1" data-bs-toggle="modal" data-bs-target="#sendMessageModal">Patients</a>
+=======
+                                    <a href="{{ route('Ordonnance.index')}}" class="btn btn-primary mb-1 me-1">Ordonnances</a> 
+                                    <a href="{{ route('patients.index')}}" class="btn btn-primary mb-1" >Patients</a>
+>>>>>>> b26e573 (dd)
                                 </div>
                             </div>
                             <!-- Modal -->
@@ -118,9 +128,9 @@
                                 <ul class="nav nav-tabs">
                                     <!-- <li class="nav-item"><a href="#my-posts" data-bs-toggle="tab" class="nav-link active show">Posts</a>
                                     </li> -->
-                                    <li class="nav-item"><a href="#about-me" data-bs-toggle="tab" class="nav-link active show">About Me</a>
+                                    <li class="nav-item"><a href="#about-me" data-bs-toggle="tab" class="nav-link active show">Mes coordonnes</a>
                                     </li>
-                                    <li class="nav-item"><a href="#profile-settings" data-bs-toggle="tab" class="nav-link">Setting</a>
+                                    <li class="nav-item"><a href="#profile-settings" data-bs-toggle="tab" class="nav-link">Mise a jour</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
@@ -237,11 +247,11 @@
                                             <a href="javascript:void()" class="btn btn-primary light btn-xs mb-1">{{ $doctor->specialite ?? 'Not specified' }}</a>
                                             <!-- Ajoute d'autres compétences ici si nécessaire -->
                                         </div>
-
+<!-- 
                                         <div class="profile-lang mb-5">
                                             <h4 class="text-primary mb-2">Language</h4>
-                                            <!-- Affiche les langues ici si nécessaire -->
-                                        </div>
+                                            -Affiche les langues ici si nécessaire 
+                                        </div> -->
 
                                         <div class="profile-personal-info">
                                             <h4 class="text-primary mb-4">Personal Information</h4>
@@ -262,7 +272,7 @@
                                                 <div class="col-3">
                                                     <h5 class="f-w-500">Age <span class="pull-right">:</span></h5>
                                                 </div>
-                                                <div class="col-9"><span>{{ $doctor->age ?? 'Not specified' }}</span></div>
+                                                <div class="col-9"><span>{{ $doctor->age ?? 'Not specified' }} </span>ans</div>
                                             </div>
                                             <div class="row mb-2">
                                                 <div class="col-3">
@@ -284,7 +294,7 @@
                             <div id="profile-settings" class="tab-pane fade">
                                     <div class="pt-3">
                                         <div class="settings-form">
-                                            <h4 class="text-primary">Account Setting</h4>
+                                            <h4 class="text-primary">Mise a jour</h4>
                                             <form method="POST" action="{{ route('doctor.update') }}" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="row">

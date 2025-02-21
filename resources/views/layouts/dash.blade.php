@@ -413,143 +413,75 @@
                 </div>
             </div>
             <div class="col-xl-12">
-                <div class="card rated-doctors">
-                    <div class="card-header border-0 pb-0">
-                        <h3 class="fs-20 text-black mb-0 me-auto">Top Rated Doctors</h3>
-                        <a href="javascript:void(0)" class="btn-link text-primary">More >></a>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-sm-flex pb-sm-4 pb-3 border-bottom mb-sm-4 mb-3 align-items-center">
-                            <div class="d-flex align-items-center me-auto ps-2">
-                                <span class="num me-sm-4 me-3">#1</span>
-                                <img src="images/users/1.jpg" class="img-1 me-sm-4 me-3" alt="">
-                                <div>
-                                    <h4 class="mb-sm-2 mb-1"><a href="doctor.html" class="text-black">Dr. Samantha
-                                            Queque</a></h4>
-                                    <span class="fs-14 text-primary font-w600">Gynecologist</span>
-                                </div>
-                            </div>
-                            <div class="text-sm-end mt-sm-0 mt-3 star-review">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                </ul>
-                                <span class="fs-14 text-black">315 reviews</span>
-                            </div>
-                        </div>
-                        <div class="d-sm-flex pb-sm-4 pb-3 border-bottom mb-sm-4 mb-3 align-items-center">
-                            <div class="d-flex align-items-center me-auto ps-2">
-                                <span class="num me-sm-4 me-3">#2</span>
-                                <img src="images/users/2.jpg" class="img-1 me-sm-4 me-3" alt="">
-                                <div>
-                                    <h4 class="mb-sm-2 mb-1"><a href="doctor.html" class="text-black">Dr. Samuel Jr.</a>
-                                    </h4>
-                                    <span class="fs-14 text-primary font-w600">Gynecologist</span>
-                                </div>
-                            </div>
-                            <div class="text-sm-end mt-sm-0 mt-3 star-review">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                </ul>
-                                <span class="fs-14 text-black">221 reviews</span>
-                            </div>
-                        </div>
-                        <div class="d-sm-flex pb-sm-4 pb-3 border-bottom mb-sm-4 mb-3 align-items-center">
-                            <div class="d-flex align-items-center me-auto ps-2">
-                                <span class="num me-sm-4 me-3">#3</span>
-                                <img src="images/users/3.jpg" class="img-1 me-sm-4 me-3" alt="">
-                                <div>
-                                    <h4 class="mb-sm-2 mb-1"><a href="doctor.html" class="text-black">Dr. Jennifer
-                                            Ruby</a></h4>
-                                    <span class="fs-14 text-primary font-w600">Gynecologist</span>
-                                </div>
-                            </div>
-                            <div class="text-sm-end mt-sm-0 mt-3 star-review">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                </ul>
-                                <span class="fs-14 text-black">181 reviews</span>
-                            </div>
-                        </div>
-                        <div class="d-sm-flex pb-sm-4 pb-3 border-bottom mb-sm-4 mb-3 align-items-center">
-                            <div class="d-flex align-items-center me-auto ps-2">
-                                <span class="num me-sm-4 me-3">#4</span>
-                                <img src="images/users/4.jpg" class="img-1 me-sm-4 me-3" alt="">
-                                <div>
-                                    <h4 class="mb-sm-2 mb-1"><a href="doctor.html" class="text-black">Dr. Abdul Aziz
-                                            Lazis</a></h4>
-                                    <span class="fs-14 text-primary font-w600">Gynecologist</span>
-                                </div>
-                            </div>
-                            <div class="text-sm-end mt-sm-0 mt-3 star-review">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                </ul>
-                                <span class="fs-14 text-black">315 reviews</span>
-                            </div>
-                        </div>
-                        <div class="d-sm-flex pb-sm-4 pb-3 border-bottom mb-sm-4 mb-3 align-items-center">
-                            <div class="d-flex align-items-center me-auto ps-2">
-                                <span class="num me-sm-4 me-3">#5</span>
-                                <img src="images/users/5.jpg" class="img-1 me-sm-4 me-3" alt="">
-                                <div>
-                                    <h4 class="mb-sm-2 mb-1"><a href="doctor.html" class="text-black">Dr. Alex Siauw</a>
-                                    </h4>
-                                    <span class="fs-14 text-primary font-w600">Gynecologist</span>
-                                </div>
-                            </div>
-                            <div class="text-sm-end mt-sm-0 mt-3 star-review">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                </ul>
-                                <span class="fs-14 text-black">176 reviews</span>
-                            </div>
-                        </div>
-                        <div class="d-sm-flex pb-0 align-items-center">
-                            <div class="d-flex align-items-center me-auto ps-2">
-                                <span class="num me-sm-4 me-3">#6</span>
-                                <img src="images/users/1.jpg" class="img-1 me-sm-4 me-3" alt="">
-                                <div>
-                                    <h4 class="mb-sm-2 mb-1"><a href="doctor.html" class="text-black">Dr. Abdul Aziz
-                                            Lazis</a></h4>
-                                    <span class="fs-14 text-primary font-w600">Gynecologist</span>
-                                </div>
-                            </div>
-                            <div class="text-sm-end mt-sm-0 mt-3 star-review">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                </ul>
-                                <span class="fs-14 text-black">315 reviews</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
 
         </div>
     </div>
 </div>
+
+
+@if(session('show_popup'))
+<div id="profilePopup" class="popup-overlay">
+    <div class="popup-content">
+        <h2>Complétez votre profil</h2>
+        <p>Veuillez compléter toutes les informations nécessaires pour valider votre compte.</p>
+        <a href="{{ route('profile') }}" class="btn btn-primary">Compléter mon profil</a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const popup = document.getElementById("profilePopup");
+
+        // Afficher le popup au chargement de la page
+        popup.style.display = "flex";
+
+        // Fermer le popup lorsqu'on clique en dehors du contenu
+        popup.addEventListener("click", function(event) {
+            if (event.target === popup) {
+                popup.style.display = "none";
+            }
+        });
+    });
+</script>
+
+    <style>
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 50%;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            text-decoration: none;
+            background: blue;
+            color: white;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
+
+    {{-- Supprime la session après affichage pour éviter qu'il reste affiché en boucle --}}
+    @php
+        session()->forget('show_popup');
+    @endphp
+@endif
+
 @endsection
